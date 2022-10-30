@@ -12,6 +12,13 @@ class Piece {
     this.x = 3;
     this.y = 0;
   }
+
+  spawn() {
+    const typeId = this.randomizeTetrisType(COLORS.length - 1);
+    this.shape = SHAPES[typeId];
+    this.color = COLORS[typeId];
+  }
+
   draw() {
     this.ctx.fillStyle = this.color;
     this.shape.forEach((row, y) => {
@@ -25,5 +32,8 @@ class Piece {
   move(p) {
     this.x = p.x;
     this.y = p.y;
+  }
+  randomizeTetrisType(noOfTypes) {
+    return Math.floor(Math.random() * noOfTypes + 1);
   }
 }
