@@ -35,5 +35,12 @@ document.addEventListener('keydown', (event) => {
 
       board.piece.draw();
     }
+    if (event.keyCode === KEY.SPACE) {
+      // Hard Drop
+      while (board.valid(p)) {
+        board.piece.move(p);
+        p = moves[KEY.DOWN](board.piece);
+      }
+    }
   }
 });
