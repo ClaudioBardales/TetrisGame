@@ -2,9 +2,15 @@
   font-family: 'Press Start 2P', cursive;
 }
 
+.tetris {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .grid {
-  display: grid;
-  grid-template-columns: 320px 200px;
+  display: flex;
+  justify-items: center;
 }
 
 .right-column {
